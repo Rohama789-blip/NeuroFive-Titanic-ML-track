@@ -88,7 +88,7 @@ GridSearchCV was used to tune the Logistic Regression model using different valu
 
 | Model | Accuracy |
 |--------|----------|
-| Original Logistic Regression | **81.01%** |
+| Original Logistic Regression | **81.00%** |
 | Tuned Logistic Regression | **78.21%** |
 
 ### Conclusion
