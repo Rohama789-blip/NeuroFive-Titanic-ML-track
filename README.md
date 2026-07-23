@@ -66,6 +66,35 @@ The visualizations indicate that passenger gender and passenger class have a sig
 - Evaluated the model using Accuracy Score
 - Generated a Confusion Matrix
 
+---
+
+## Task 5: Model Evaluation & Hyperparameter Tuning
+
+### Evaluation Metrics
+
+The Logistic Regression model was evaluated using multiple classification metrics instead of relying only on accuracy.
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+### Hyperparameter Tuning
+
+GridSearchCV was used to tune the Logistic Regression model using different values of **C** and **solver**.
+
+### Results
+
+| Model | Accuracy |
+|--------|----------|
+| Original Logistic Regression | **81.01%** |
+| Tuned Logistic Regression | **78.21%** |
+
+### Conclusion
+
+The original Logistic Regression model achieved better accuracy than the tuned model. This demonstrates that hyperparameter tuning does not always improve model performance, and the best model should be selected based on evaluation results rather than assumptions.
+
 ### Model Performance
 
 **Algorithm:** Logistic Regression
