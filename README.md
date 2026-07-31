@@ -1,12 +1,12 @@
-#  Titanic Survival Analysis
+# Titanic Machine Learning Project – NeuroFive ML Internship
 
 ## Project Overview
 
-This project was completed as part of the NeuroFive ML Internship. It demonstrates the complete machine learning workflow using the Titanic dataset, starting from Exploratory Data Analysis (EDA) to Data Cleaning, Visualization, and finally building a Classification Model using Logistic Regression.
+This repository contains all Titanic-based tasks completed as part of the **NeuroFive Machine Learning Internship**. The project follows a complete machine learning workflow, starting from data exploration and preprocessing to model building, evaluation, and deployment using a Scikit-learn Pipeline.
 
 ---
 
-## Tools & Libraries Used
+# Technologies Used
 
 - Python
 - Google Colab
@@ -15,24 +15,27 @@ This project was completed as part of the NeuroFive ML Internship. It demonstrat
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- Joblib
 
 ---
 
 # Task 1: Exploratory Data Analysis (EDA)
 
 ### Objectives
+
 - Load the Titanic dataset
 - Explore the dataset structure
 - Display the first five rows
-- Check dataset information
+- Analyze dataset information
 - Generate descriptive statistics
-- Identify numerical and categorical columns
+- Identify numerical and categorical features
 - Detect missing values
-- Summarize key findings
+- Summarize key insights
 
-### Findings
+### Key Findings
+
 - The dataset contains both numerical and categorical features.
-- Missing values were found in the Age, Cabin, and Embarked columns.
+- Missing values were found in the **Age**, **Cabin**, and **Embarked** columns.
 - The dataset is suitable for machine learning after preprocessing.
 
 ---
@@ -40,39 +43,52 @@ This project was completed as part of the NeuroFive ML Internship. It demonstrat
 # Task 2: Data Cleaning & Visualization
 
 ### Data Cleaning
-- Filled missing values in the Age column using the median.
-- Filled missing values in the Embarked column using the mode.
-- Removed the Cabin column because it contained a large number of missing values.
 
-### Visualizations Created
+- Filled missing values in **Age** using the median.
+- Filled missing values in **Embarked** using the mode.
+- Removed the **Cabin** column because of excessive missing values.
+
+### Visualizations
+
 - Histogram
-- Boxplot (Outlier Detection)
-- Survival Bar Chart
+- Boxplot
+- Survival Count Bar Chart
 - Correlation Heatmap
 
 ### Observation
-The visualizations indicate that passenger gender and passenger class have a significant impact on survival.
+
+The analysis showed that **Gender (Sex)** and **Passenger Class (Pclass)** strongly influence survival.
 
 ---
 
 # Task 3: Titanic Survival Prediction
 
-### Machine Learning Steps
-- Prepared the cleaned dataset
-- Encoded categorical variables using `pd.get_dummies()`
-- Split the dataset into training and testing sets
-- Trained a Logistic Regression model
-- Predicted passenger survival
-- Evaluated the model using Accuracy Score
-- Generated a Confusion Matrix
+### Machine Learning Workflow
+
+- Data preprocessing
+- Handling missing values
+- Encoding categorical variables
+- Train/Test Split
+- Logistic Regression model
+- Prediction
+- Model evaluation
+
+### Model Performance
+
+- **Algorithm:** Logistic Regression
+- **Accuracy:** **81.01%**
+
+### Conclusion
+
+The Logistic Regression model successfully predicted passenger survival with an accuracy of approximately **81%**.
 
 ---
 
-## Task 5: Model Evaluation & Hyperparameter Tuning
+# Task 4: Model Evaluation & Hyperparameter Tuning
 
 ### Evaluation Metrics
 
-The Logistic Regression model was evaluated using multiple classification metrics instead of relying only on accuracy.
+The model was evaluated using:
 
 - Accuracy
 - Precision
@@ -82,40 +98,98 @@ The Logistic Regression model was evaluated using multiple classification metric
 
 ### Hyperparameter Tuning
 
-GridSearchCV was used to tune the Logistic Regression model using different values of **C** and **solver**.
+GridSearchCV was applied using different values of:
+
+- C
+- Solver
 
 ### Results
 
 | Model | Accuracy |
 |--------|----------|
-| Original Logistic Regression | **81.00%** |
+| Original Logistic Regression | **81.01%** |
 | Tuned Logistic Regression | **78.21%** |
 
 ### Conclusion
 
-The original Logistic Regression model achieved better accuracy than the tuned model. This demonstrates that hyperparameter tuning does not always improve model performance, and the best model should be selected based on evaluation results rather than assumptions.
-
-### Model Performance
-
-**Algorithm:** Logistic Regression
-
-**Accuracy:** **81%**
-
-### Conclusion
-
-The Logistic Regression model achieved an accuracy of **81%**, demonstrating good performance for a baseline classification model. The analysis suggests that passenger gender and passenger class were among the most influential factors affecting survival.
+The tuned model achieved slightly lower accuracy than the original model. This demonstrates that hyperparameter tuning does not always improve performance and that models should always be evaluated on unseen test data.
 
 ---
 
-## Repository Contents
+# Task 5: Feature Engineering & Machine Learning Pipeline
 
-- Titanic_EDA.ipynb
-- Titanic_Cleaning_Visualization.ipynb
-- Titanic_Classification_Model.ipynb
-- README.md
+### Feature Engineering
+
+Two new features were created:
+
+- FamilySize
+- IsAlone
+
+### Pipeline Components
+
+- SimpleImputer
+- StandardScaler
+- OneHotEncoder
+- ColumnTransformer
+- Logistic Regression
+
+### Model Performance
+
+- **Pipeline Accuracy:** **79%**
+
+### Model Export
+
+The trained pipeline was saved using **Joblib**.
+
+File:
+
+```
+Titanic_Pipeline_Model.pkl
+```
+
+### Conclusion
+
+Using a Scikit-learn Pipeline automates preprocessing and model training, making the workflow reusable, consistent, and less prone to data leakage.
+
+---
+
+# Repository Contents
+
+```
+Titanic_EDA.ipynb
+Titanic_Cleaning_Visualization.ipynb
+Titanic_Classification_Model.ipynb
+Titanic_Model_Evaluation.ipynb
+Titanic_Pipeline_Model.ipynb
+Titanic_Pipeline_Model.pkl
+README.md
+```
+
+---
+
+# Skills Demonstrated
+
+- Exploratory Data Analysis (EDA)
+- Data Cleaning
+- Data Visualization
+- Feature Engineering
+- Logistic Regression
+- Model Evaluation
+- Hyperparameter Tuning
+- Scikit-learn Pipeline
+- Feature Encoding
+- Model Serialization using Joblib
+
+---
+
+# Final Project Summary
+
+This repository demonstrates a complete end-to-end Machine Learning workflow using the Titanic dataset. It covers data exploration, preprocessing, visualization, feature engineering, model development, evaluation, hyperparameter tuning, and pipeline creation. The project follows industry-standard practices using Scikit-learn and provides a reusable machine learning solution for predicting Titanic passenger survival.
 
 ---
 
 ## Author
 
-Completed as part of the **NeuroFive ML Internship Program** using **Google Colab** and **Python**.
+**NeuroFive Machine Learning Internship Project**
+
+Developed using **Python**, **Google Colab**, and **Scikit-learn**.
